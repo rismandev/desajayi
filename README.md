@@ -2,6 +2,10 @@
 
 Website statis modern untuk Desa/Kelurahan yang dibangun dengan TailwindCSS. Template ini menyediakan semua fitur essential yang dibutuhkan untuk website pemerintahan desa.
 
+## 🔗 Demo
+
+[desajayi.rismandev.site](https://desajayi.rismandev.site)
+
 ## 🚀 Fitur
 
 ### Halaman Utama (index.html)
