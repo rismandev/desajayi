@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Website Desa Jayi</title>
+    <meta
+      name="description"
+      content="Template website statis desa/kelurahan menggunakan TailwindCSS."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+      :root {
+        --header-offset: 84px;
+      }
+
+      html {
+        scroll-padding-top: var(--header-offset);
+      }
+
+      section[id] {
+        scroll-margin-top: var(--header-offset);
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                600: "#0284c7",
+                700: "#0369a1",
+                800: "#075985",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="grid h-10 w-10 place-items-center rounded-full bg-brand-700 text-sm font-bold text-white"
+          >
+            DJ
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-900">Desa Jayi</p>
+            <p class="text-xs text-slate-500">Kecamatan Contoh</p>
+          </div>
+        </a>
+
+        <button
+          id="menuToggle"
+          class="inline-flex items-center rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 md:hidden"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+
+        <nav
+          class="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex"
+        >
+          <a class="hover:text-brand-700" href="#beranda">Beranda</a>
+          <a class="hover:text-brand-700" href="#profil">Profil</a>
+          <a class="hover:text-brand-700" href="#layanan">Layanan</a>
+          <a class="hover:text-brand-700" href="#berita">Berita</a>
+          <a class="hover:text-brand-700" href="#agenda">Agenda</a>
+          <a class="hover:text-brand-700" href="#dokumen">Dokumen</a>
+          <a class="hover:text-brand-700" href="#kontak">Kontak</a>
+        </nav>
+      </div>
+
+      <nav
+        id="mobileMenu"
+        class="hidden border-t border-slate-200 bg-white px-4 py-3 md:hidden"
+      >
+        <div class="grid gap-2 text-sm font-medium text-slate-700">
+          <a class="rounded px-2 py-2 hover:bg-slate-100" href="#beranda"
+            >Beranda</a
+          >
+          <a class="rounded px-2 py-2 hover:bg-slate-100" href="#profil"
+            >Profil</a
+          >
+          <a class="rounded px-2 py-2 hover:bg-slate-100" href="#layanan"
+            >Layanan</a
+          >
+          <a class="rounded px-2 py-2 hover:bg-slate-100" href="#berita"
+            >Berita</a
+          >
+          <a class="rounded px-2 py-2 hover:bg-slate-100" href="#agenda"
+            >Agenda</a
+          >
+          <a class="rounded px-2 py-2 hover:bg-slate-100" href="#dokumen"
+            >Dokumen</a
+          >
+          <a class="rounded px-2 py-2 hover:bg-slate-100" href="#kontak"
+            >Kontak</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        id="beranda"
+        class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-brand-800 via-brand-700 to-brand-600 text-white"
+      >
+        <div
+          class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:px-8 lg:py-24"
+        >
+          <div data-aos="fade-up">
+            <p
+              class="mb-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider"
+            >
+              Website Resmi Desa
+            </p>
+            <h1
+              class="text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl"
+            >
+              Selamat Datang di Portal Informasi Desa Jayi
+            </h1>
+            <p class="mt-4 max-w-xl text-sm text-sky-100 sm:text-base">
+              Satu pintu informasi layanan publik, pengumuman warga, agenda
+              kegiatan, dan dokumen penting desa.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#layanan"
+                class="w-full rounded-md bg-white px-5 py-3 text-center text-sm font-semibold text-brand-700 hover:bg-slate-100 sm:w-auto"
+                >Lihat Layanan</a
+              >
+              <a
+                href="https://wa.me/628xxxxxxxxxx?text=Halo,%20saya%20ingin%20menyampaikan%20pengaduan/aspirasi"
+                target="_blank"
+                rel="noopener"
+                class="w-full flex justify-center items-center gap-2 rounded-md bg-green-600 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-green-700 sm:w-auto"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  />
+                </svg>
+                Sampaikan Aduan
+              </a>
+              <a
+                href="#kontak"
+                class="w-full rounded-md border border-white/50 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-white/10 sm:w-auto"
+                >Hubungi Kami</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="grid gap-4 rounded-2xl bg-white/10 p-5 backdrop-blur"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <div class="rounded-xl bg-white/15 p-4">
+              <p class="text-xs uppercase tracking-wide text-sky-100">
+                Pengumuman Terbaru
+              </p>
+              <p class="mt-1 text-sm font-semibold">
+                Pelayanan administrasi tutup sementara tanggal 12 Maret 2026.
+              </p>
+            </div>
+            <div class="rounded-xl bg-white/15 p-4">
+              <p class="text-xs uppercase tracking-wide text-sky-100">
+                Jam Pelayanan
+              </p>
+              <p class="mt-1 text-sm font-semibold">
+                Senin - Jumat, 08.00 - 14.00 WIB
+              </p>
+            </div>
+            <div class="rounded-xl bg-white/15 p-4">
+              <p class="text-xs uppercase tracking-wide text-sky-100">
+                Kontak Cepat
+              </p>
+              <p class="mt-1 text-sm font-semibold">WhatsApp: 08xx-xxxx-xxxx</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="profil"
+        class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8"
+        data-aos="fade-up"
+      >
+        <div class="mb-8 flex items-end justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 sm:text-2xl">
+              Profil Desa
+            </h2>
+            <p class="mt-2 text-sm text-slate-600">
+              Ringkasan informasi desa/kelurahan.
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-sm font-semibold text-slate-900">
+              Sejarah Singkat
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Desa Jayi berdiri sejak tahun 19xx dan berkembang sebagai wilayah
+              agraris dengan semangat gotong royong.
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-sm font-semibold text-slate-900">Visi & Misi</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Mewujudkan pelayanan publik yang transparan, cepat, dan inklusif
+              untuk seluruh warga.
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-sm font-semibold text-slate-900">Data Wilayah</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Luas wilayah: xx ha · Jumlah dusun: x · RT/RW: xx/xx · Jumlah
+              penduduk: xxxx jiwa.
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-sm font-semibold text-slate-900">Kepala Desa</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Nama Kepala Desa · Masa jabatan 2022-2028 · Kontak: 08xx-xxxx-xxxx
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-sm font-semibold text-slate-900">Demografi</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Laki-laki: xxxx · Perempuan: xxxx · KK: xxx · Usia produktif: xx%
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="text-sm font-semibold text-slate-900">Potensi Desa</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Pertanian padi & jagung, peternakan, UMKM makanan ringan, wisata
+              alam.
+            </p>
+          </article>
+        </div>
+
+        <div class="mt-10">
+          <h3 class="text-lg font-bold text-slate-900 sm:text-xl">
+            Struktur Perangkat Desa
+          </h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Susunan pemerintahan desa periode 2022-2028.
+          </p>
+
+          <div
+            class="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white"
+          >
+            <table class="min-w-full divide-y divide-slate-200 text-sm">
+              <thead class="bg-slate-50">
+                <tr>
+                  <th class="px-4 py-3 text-left font-semibold text-slate-700">
+                    Jabatan
+                  </th>
+                  <th class="px-4 py-3 text-left font-semibold text-slate-700">
+                    Nama
+                  </th>
+                  <th class="px-4 py-3 text-left font-semibold text-slate-700">
+                    Kontak
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                <tr>
+                  <td class="px-4 py-3 font-medium">Kepala Desa</td>
+                  <td class="px-4 py-3">[Nama Kepala Desa]</td>
+                  <td class="px-4 py-3">08xx-xxxx-xxxx</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">Sekretaris Desa</td>
+                  <td class="px-4 py-3">[Nama Sekretaris]</td>
+                  <td class="px-4 py-3">08xx-xxxx-xxxx</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">Kaur Keuangan</td>
+                  <td class="px-4 py-3">[Nama Kaur]</td>
+                  <td class="px-4 py-3">08xx-xxxx-xxxx</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">Kaur Pembangunan</td>
+                  <td class="px-4 py-3">[Nama Kaur]</td>
+                  <td class="px-4 py-3">08xx-xxxx-xxxx</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">Kaur Pemerintahan</td>
+                  <td class="px-4 py-3">[Nama Kaur]</td>
+                  <td class="px-4 py-3">08xx-xxxx-xxxx</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">Kasi Kesejahteraan</td>
+                  <td class="px-4 py-3">[Nama Kasi]</td>
+                  <td class="px-4 py-3">08xx-xxxx-xxxx</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="layanan"
+        class="border-y border-slate-200 bg-white"
+        data-aos="fade-up"
+      >
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <h2 class="text-xl font-bold text-slate-900 sm:text-2xl">
+            Layanan Publik
+          </h2>
+          <p class="mt-2 text-sm text-slate-600">
+            Daftar layanan utama beserta persyaratan singkat.
+          </p>
+
+          <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">Surat Keterangan Domisili</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: KTP, KK. Estimasi selesai 1 hari kerja.
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">Surat Pengantar Nikah</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: KTP, KK, surat pengantar RT/RW.
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">Surat Keterangan Usaha</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: KTP, KK, foto lokasi usaha.
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">
+                Surat Keterangan Tidak Mampu
+              </h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: KTP, KK, surat pengantar RT/RW. Gratis.
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">Pengantar KTP & KK</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: formulir, pas foto. Diteruskan ke Disdukcapil.
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">Surat Keterangan Ahli Waris</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: KTP, KK, akta kematian, surat pengantar.
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">Surat Izin Keramaian</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: proposal kegiatan, KTP, surat RT/RW.
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">Surat Keterangan Kehilangan</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: KTP, kronologi kejadian tertulis.
+              </p>
+            </article>
+            <article class="rounded-xl border border-slate-200 p-5">
+              <h3 class="text-sm font-semibold">Surat Keterangan Kematian</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Syarat: KTP, KK, surat keterangan dokter/RT.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="berita"
+        class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8"
+        data-aos="fade-up"
+      >
+        <div
+          class="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end sm:gap-4"
+        >
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 sm:text-2xl">
+              Berita & Pengumuman
+            </h2>
+            <p class="mt-2 text-sm text-slate-600">
+              Informasi terbaru untuk warga.
+            </p>
+          </div>
+          <a
+            href="berita.html"
+            class="text-sm font-semibold text-brand-700 hover:underline"
+            >Lihat Semua</a
+          >
+        </div>
+
+        <div class="mt-6">
+          <div class="relative">
+            <input
+              type="text"
+              id="searchBerita"
+              placeholder="Cari berita atau pengumuman..."
+              class="w-full rounded-lg border border-slate-300 px-4 py-2.5 pr-10 text-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
+            />
+            <svg
+              class="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <div
+          id="beritaContainer"
+          class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="text-xs text-slate-500">08 Maret 2026 · Pengumuman</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">
+              Jadwal kerja bakti lingkungan minggu ini
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Warga diharapkan hadir pada hari Minggu pukul 07.00 WIB di balai
+              desa.
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="text-xs text-slate-500">07 Maret 2026 · Pengumuman</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">
+              Perubahan jam pelayanan selama Ramadan
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Pelayanan administrasi dimulai pukul 08.00 s/d 13.00 WIB efektif
+              11 Maret.
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="text-xs text-slate-500">05 Maret 2026 · Berita</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">
+              Penyaluran bantuan pangan tahap I
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Distribusi bantuan berlangsung tertib dengan dukungan kader dan
+              perangkat desa.
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="text-xs text-slate-500">03 Maret 2026 · Berita</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">
+              Lomba desa tingkat kecamatan berhasil juara II
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Desa Jayi berhasil meraih juara II lomba desa sehat se-kecamatan.
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="text-xs text-slate-500">01 Maret 2026 · Berita</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">
+              Musyawarah desa penyusunan program 2026
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Hasil musyawarah akan dipublikasikan untuk transparansi
+              pembangunan desa.
+            </p>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="text-xs text-slate-500">28 Februari 2026 · Berita</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">
+              Pelatihan UMKM membuat keripik pisang
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Dihadiri 30 peserta dari berbagai dusun, difasilitasi Dinas
+              Koperasi.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="agenda"
+        class="border-y border-slate-200 bg-white"
+        data-aos="fade-up"
+      >
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <h2 class="text-xl font-bold text-slate-900 sm:text-2xl">
+            Agenda Kegiatan
+          </h2>
+          <p class="mt-2 text-sm text-slate-600">
+            Jadwal kegiatan desa dalam waktu dekat.
+          </p>
+
+          <div class="mt-6 space-y-3 md:hidden">
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">10 Maret 2026</p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900">
+                Senam Lansia
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">Lapangan Desa</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">12 Maret 2026</p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900">
+                Posyandu Balita
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">Balai Dusun 1</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">13 Maret 2026</p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900">
+                Posyandu Lansia
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">Balai Dusun 2</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">16 Maret 2026</p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900">
+                Rapat RT/RW
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">Aula Desa</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">18 Maret 2026</p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900">
+                Arisan PKK
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">Balai Desa</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">20 Maret 2026</p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900">
+                Pelatihan UMKM
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">Balai Desa</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">22 Maret 2026</p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900">
+                Ronda Malam
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">Pos Kamling</p>
+            </article>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">25 Maret 2026</p>
+              <h3 class="mt-1 text-sm font-semibold text-slate-900">
+                Karang Taruna Meeting
+              </h3>
+              <p class="mt-1 text-sm text-slate-600">
+                Sekretariat Karang Taruna
+              </p>
+            </article>
+          </div>
+
+          <div
+            class="mt-8 hidden overflow-hidden rounded-xl border border-slate-200 md:block"
+          >
+            <table class="min-w-full divide-y divide-slate-200 text-sm">
+              <thead class="bg-slate-50">
+                <tr>
+                  <th class="px-4 py-3 text-left font-semibold text-slate-700">
+                    Tanggal
+                  </th>
+                  <th class="px-4 py-3 text-left font-semibold text-slate-700">
+                    Kegiatan
+                  </th>
+                  <th class="px-4 py-3 text-left font-semibold text-slate-700">
+                    Lokasi
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                <tr>
+                  <td class="px-4 py-3">10 Maret 2026</td>
+                  <td class="px-4 py-3">Senam Lansia</td>
+                  <td class="px-4 py-3">Lapangan Desa</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">12 Maret 2026</td>
+                  <td class="px-4 py-3">Posyandu Balita</td>
+                  <td class="px-4 py-3">Balai Dusun 1</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">13 Maret 2026</td>
+                  <td class="px-4 py-3">Posyandu Lansia</td>
+                  <td class="px-4 py-3">Balai Dusun 2</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">16 Maret 2026</td>
+                  <td class="px-4 py-3">Rapat RT/RW</td>
+                  <td class="px-4 py-3">Aula Desa</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">18 Maret 2026</td>
+                  <td class="px-4 py-3">Arisan PKK</td>
+                  <td class="px-4 py-3">Balai Desa</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">20 Maret 2026</td>
+                  <td class="px-4 py-3">Pelatihan UMKM</td>
+                  <td class="px-4 py-3">Balai Desa</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">22 Maret 2026</td>
+                  <td class="px-4 py-3">Ronda Malam</td>
+                  <td class="px-4 py-3">Pos Kamling</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">25 Maret 2026</td>
+                  <td class="px-4 py-3">Karang Taruna Meeting</td>
+                  <td class="px-4 py-3">Sekretariat Karang Taruna</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="dokumen"
+        class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8"
+        data-aos="fade-up"
+      >
+        <h2 class="text-xl font-bold text-slate-900 sm:text-2xl">
+          Dokumen Unduhan
+        </h2>
+        <p class="mt-2 text-sm text-slate-600">
+          Formulir layanan yang dapat diunduh mandiri.
+        </p>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a
+            href="#"
+            class="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 hover:border-brand-600 hover:bg-brand-50"
+          >
+            <div>
+              <p class="text-sm font-semibold text-slate-900">
+                Form Surat Keterangan Domisili
+              </p>
+              <p class="text-xs text-slate-500">PDF · 120 KB</p>
+            </div>
+            <span class="text-sm font-semibold text-brand-700">Unduh</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 hover:border-brand-600 hover:bg-brand-50"
+          >
+            <div>
+              <p class="text-sm font-semibold text-slate-900">
+                Form Surat Keterangan Usaha
+              </p>
+              <p class="text-xs text-slate-500">PDF · 145 KB</p>
+            </div>
+            <span class="text-sm font-semibold text-brand-700">Unduh</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 hover:border-brand-600 hover:bg-brand-50"
+          >
+            <div>
+              <p class="text-sm font-semibold text-slate-900">
+                Form Surat Keterangan Tidak Mampu
+              </p>
+              <p class="text-xs text-slate-500">PDF · 135 KB</p>
+            </div>
+            <span class="text-sm font-semibold text-brand-700">Unduh</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 hover:border-brand-600 hover:bg-brand-50"
+          >
+            <div>
+              <p class="text-sm font-semibold text-slate-900">
+                Form Pengantar KTP & KK
+              </p>
+              <p class="text-xs text-slate-500">PDF · 98 KB</p>
+            </div>
+            <span class="text-sm font-semibold text-brand-700">Unduh</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 hover:border-brand-600 hover:bg-brand-50"
+          >
+            <div>
+              <p class="text-sm font-semibold text-slate-900">
+                Form Surat Keterangan Ahli Waris
+              </p>
+              <p class="text-xs text-slate-500">PDF · 152 KB</p>
+            </div>
+            <span class="text-sm font-semibold text-brand-700">Unduh</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 hover:border-brand-600 hover:bg-brand-50"
+          >
+            <div>
+              <p class="text-sm font-semibold text-slate-900">
+                Form Surat Izin Keramaian
+              </p>
+              <p class="text-xs text-slate-500">PDF · 115 KB</p>
+            </div>
+            <span class="text-sm font-semibold text-brand-700">Unduh</span>
+          </a>
+        </div>
+      </section>
+
+      <section
+        id="kontak"
+        class="border-t border-slate-200 bg-slate-900 text-slate-100"
+        data-aos="fade-up"
+      >
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-3">
+            <div>
+              <h2 class="text-lg font-bold sm:text-xl">Kontak Desa Jayi</h2>
+              <p class="mt-3 text-sm text-slate-300">
+                Jl. Raya Desa Jayi No. 1, Kecamatan Contoh, Kabupaten Contoh.
+              </p>
+              <a
+                href="https://wa.me/628xxxxxxxxxx?text=Halo,%20saya%20ingin%20menyampaikan%20pengaduan/aspirasi"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-flex items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-700"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  />
+                </svg>
+                Aduan / Aspirasi
+              </a>
+            </div>
+            <div>
+              <h3
+                class="text-sm font-semibold uppercase tracking-wider text-slate-300"
+              >
+                Informasi
+              </h3>
+              <ul class="mt-3 space-y-2 text-sm text-slate-200">
+                <li>Telepon: (027x) xxxxxx</li>
+                <li>WhatsApp: 08xx-xxxx-xxxx</li>
+                <li>Email: desajayi@example.id</li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="text-sm font-semibold uppercase tracking-wider text-slate-300"
+              >
+                Jam Pelayanan
+              </h3>
+              <ul class="mt-3 space-y-2 text-sm text-slate-200">
+                <li>Senin - Jumat: 08.00 - 14.00</li>
+                <li>Sabtu: 08.00 - 11.00</li>
+                <li>Minggu: Libur</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <h3
+              class="text-sm font-semibold uppercase tracking-wider text-slate-300"
+            >
+              Lokasi Kantor Desa
+            </h3>
+            <div
+              class="mt-4 overflow-hidden rounded-xl border border-slate-700"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d362.5810851737315!2d108.31815589466434!3d-6.787827450721791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f27d3d9823c77%3A0x52cfd653ced46ebe!2sKantor%20Desa%20Jayi!5e0!3m2!1sid!2sid!4v1773043236550!5m2!1sid!2sid"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <p class="mt-3 text-xs text-slate-400">
+              *Ganti koordinat embed map dengan lokasi kantor desa sebenarnya
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="border-t border-slate-800 bg-slate-950 py-4 text-center text-xs text-slate-400"
+    >
+      © 2026 Pemerintah Desa Jayi. Semua hak dilindungi.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
